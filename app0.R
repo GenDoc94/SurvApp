@@ -1,16 +1,21 @@
-library(shiny)
-library(readxl)
+library(knitr)
 library(dplyr)
 library(survival)
-library(survminer)
+library(ggplot2)
+library(tibble)
+library(lubridate)
+library(ggsurvfit)
+library(gtsummary)
+library(tidycmprsk)
+library(condsurv)
+library(prodlim)
+
 
 ui <- fluidPage(
-        titlePanel("Análisis de supervivencia básico"),
-        
+        titlePanel("Ánalisis Supervivencia (v0)"),
         sidebarLayout(
                 sidebarPanel(
-                        fileInput("file", "Subir archivo Excel (.xlsx)", accept = c(".xlsx")),
-                        
+                        fileInput("file", "Sube archivo Excel (.xlsx)", accept = c(".xlsx")),
                         uiOutput("numPacUI"),
                         uiOutput("fdxUI"),
                         uiOutput("fusUI"),
